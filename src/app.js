@@ -48,7 +48,7 @@ currentDate();
 // Show Weather and City on Screen after fetching Geolocation
 
 function showWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   document.querySelector("#displayed-temp").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].main;
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
@@ -100,7 +100,7 @@ locationButton.addEventListener("click", retreiveGeolocation);
 // Default Real Weather Data for London Shown when Opening Page
 
 function autoShowWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   document.querySelector("#displayed-temp").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].main;
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
@@ -118,7 +118,8 @@ function autoShowWind(response) {
 function autoRetrieveLondon() {
   let apiKey = "1dca542b443d294d157be34aefdc0627";
   let units = `metric`;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=London&units=${units}&appid=${apiKey}`;
+  let city = `London`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(url).then(autoShowWeather);
 }
 

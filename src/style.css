@@ -190,9 +190,19 @@ a {
 }
 
 @media screen and (max-width: 400px) {
-  #location-button {
-    display: block;
-    margin: 0 auto;
-    border-radius: 0 5px 5px 0;
+  h1 {
+    font-size: 30px;
+  }
+  .card {
+    margin-top: 85px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  h1 {
+    font-size: 25px;
+  }
+  .card {
+    margin-top: 80px;
   }
 }
