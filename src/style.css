@@ -42,15 +42,18 @@ h1 {
   margin: 30px 0 30px 0;
 }
 
+#date,
+#temp-description {
+  text-align: left;
+  margin: 0 0 10px 0;
+}
+
 .temp {
   font-size: 60px;
-  text-align: center;
+  text-align: left;
   margin: 30px 0 30px 0;
 }
 
-#temp-description {
-  text-align: center;
-}
 .date-time {
   font-size: 30px;
   text-align: center;
@@ -141,13 +144,25 @@ a {
   #city {
     text-align: center;
     font-size: 35px;
+    margin-top: 50px;
   }
-
-  @media screen and (max-width: 400px) {
-  #location-button {
+  #date,
+  #temp-description,
+  #main-temp {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .card {
+    margin: 100px auto 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #location-button {
     display: block;
     margin: 0 auto;
-    background-color: #EC6E4C;
     border-radius: 0 5px 5px 0;
   }
+}
