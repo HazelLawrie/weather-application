@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="src/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        
+        
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <h1>
+                Weather App
+            </h1>
+        </header>
+    <div class="card">
+    <div class="card-body">
+    <form>
+        <div class="input-group">
+            <input id="input" type="text" class="form-control" placeholder="Enter City..." autofocus>
+            <span class="input-group-btn">
+                <button id="button" class="btn btn-default" type="button">Search</button>
+                <button id="location-button" class="btn btn-default" type="button">Current</button>
+            </span>
+        </div>
+    </form>
+    <div class="row">
+        <h2 id="city" class="card-title col-sm location">
+            Edinburgh
+        </h2>
+        <h2 id="date" class="card-text col-sm date-time">
+            Current Date
+        </h2>
+    </div>
+    <div class="row">
+        <h2 id="main-temp" class="card-text col-sm temp">
+            <span id="displayed-temp">15</span><a href="#" class="col" id="change-to-C">°C</a> 
+            <a href="#"  id="change-to-F">°F</a>
+        </h2>
+        <h2 id="temp-description" class="card-text col-sm">
+            Description
+        </h2>  
+    </div> 
+    <hr>
+    <div class="row second-row">
+        <h5 class="col wind-speed">
+            Wind Speed
+            <br>
+            10 MPH
+        </h5>
+        <h5 class="col humidity">
+            Humidity
+            <br>
+            75%
+        </h5>
+        <h5 class="col pressure">
+            Pressure
+            <br>
+            1028
+        </h5>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row weekdays">
+    <div class="col-sm">
+            Monday
+            <br>
+            <img class="col-sm" src="images/undraw_weather_app_i5sm.svg" alt="Woman Sitting on Cloud Illustration" height=70 />
+            Cloudy
+            <br />
+            15°C
+    </div>
+    <div class="col-sm">
+            Tuesday
+            <br>
+            <img class="col-sm" src="images/undraw_weather_app_i5sm.svg" alt="Woman Sitting on Cloud Illustration" height=70 />
+            Cloudy
+            <br />
+            15°C
+    </div>
+    <div class="col-sm">
+            Wednesday
+            <br>
+            <img class="col-sm" src="images/undraw_weather_app_i5sm.svg" alt="Woman Sitting on Cloud Illustration" height=70 />
+            Cloudy
+            <br />
+            15°C
+    </div>
+    <div class="col-sm">
+            Thursday
+            <br>
+            <img class="col-sm" src="images/undraw_weather_app_i5sm.svg" alt="Woman Sitting on Cloud Illustration" height=70 />
+            Cloudy
+            <br />
+            15°C
+    </div>
+    <div class="col-sm">
+            Friday
+            <br />
+            <img class="col-sm" src="images/undraw_weather_app_i5sm.svg" alt="Woman Sitting on Cloud Illustration" height=70 />
+            Cloudy
+            <br />
+            15°C
+    </div>
+    </div>
+
+<footer>
+    <p>
+    Programmed and Designed by <a href="https://www.linkedin.com/in/hazel-lawrie/" target="_blank">Hazel Lawrie</a> 
+    </p>
+</footer>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="src/app.js"></script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  background-image: linear-gradient(to top, #4765c7 0%, #c4dcff 100%);
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.card {
+  padding: 30px 30px 0 30px;
+  margin: 140px auto;
+  margin-bottom: 0;
+  background-color: #232558;
+  max-width: 800px;
+  border-radius: 12px 12px 0 0;
+}
+
+input {
+  border: 0;
+  border-radius: 6px;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  background-color: #232558;
+  width: 100%;
+  padding: 10px 0 15px 0;
+  z-index: 1;
+  box-shadow: 0 5px 5px rgba(68, 46, 46, 0.3);
+}
+
+.location {
+  font-size: 50px;
+  margin: 30px 0 30px 0;
+}
+
+.temp {
+  font-size: 60px;
+  text-align: center;
+  margin: 30px 0 30px 0;
+}
+
+#temp-description {
+  text-align: center;
+}
+.date-time {
+  font-size: 30px;
+  text-align: center;
+  margin: 30px 0 30px 0;
+}
+
+.card-text:last-child {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+img {
+  margin: 20px 0;
+}
+
+.form-control {
+  max-width: 250px;
+  border-radius: 5px 0 0 5px;
+  margin-bottom: 20px;
+  border: 0;
+}
+
+.wind-speed,
+.pressure,
+.humidity {
+  margin: 15px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+button {
+  color: #fff;
+  background-color: #4d50bf;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.btn {
+  border-radius: 0 5px 5px 0;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #6468e2;
+}
+
+#location-button {
+  border-radius: 5px;
+  margin-left: 13px;
+}
+
+#change-to-F,
+#change-to-C {
+  font-size: 30px;
+}
+
+.weekdays {
+  background-color: white;
+  color: #232558;
+  text-align: center;
+  padding: 35px 20px 0 20px;
+  border-radius: 0 0 12px 12px;
+  margin: 0 auto;
+  max-width: 800px;
+  font-family: "Roboto", sans-serif;
+}
+
+footer {
+  text-align: center;
+  margin: 35px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.col-sm {
+  margin-bottom: 30px;
+}
+
+a {
+  color: #fff;
+  text-decoration: underline;
+}
