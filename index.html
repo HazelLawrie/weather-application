@@ -32,22 +32,21 @@
     </form>
     <div class="row">
         <h2 id="city" class="card-title col-sm location">
-            Edinburgh
+            -
         </h2>
     </div>
     <div class="row">
         <h2 id="date" class="card-text col-sm date-time">
-            Current Date
+            -
         </h2>
     </div>
     <h2 id="temp-description" class="card-text col-sm">
-            Sunny
+            -
         </h2>  
     <div class="row">
         <h2 id="main-temp" class="card-text col-sm temp">
             <img src="images/sunny.png" />
-            <span id="displayed-temp">15</span><a href="#" class="col" id="change-to-C">°C</a> 
-            <a href="#"  id="change-to-F">°F</a>
+            <span id="displayed-temp">-</span><a href="#" class="col" id="change-to-C">°C</a><a href="#" id="change-to-F">°F</a>
         </h2>
         
     </div> 
@@ -55,20 +54,20 @@
     <div class="row second-row">
         
         <h5 class="col pressure">
-            Precipitation:
+            Pressure:
             <br>
-            20%
+            <span id="pressure-value">-</span>
         </h5>
         <h5 class="col humidity">
             Humidity:
             <br>
-            75%
+            <span id="humidity-value">-</span>%
         </h5>
         
         <h5 class="col wind-speed">
             Wind:
             <br>
-            10 mph
+            <span id="wind-value">-</span> mph
         </h5>
     </div>
     </div>
@@ -119,7 +118,7 @@
 
 <footer>
     <p>
-    <a href="https://github.com/HazelLawrie/weather-application" target="_blank">Open Source Code</a> by <a href="https://www.linkedin.com/in/hazel-lawrie/" target="_blank">Hazel Lawrie</a> 
+    <a href="https://github.com/HazelLawrie/weather-application" target="_blank">Open source-code</a> by <a href="https://www.linkedin.com/in/hazel-lawrie/" target="_blank">Hazel Lawrie</a> and <a href="https://boring-ardinghelli-f09f8b.netlify.app/" target="_blank">hosted on Netlify</a>
     </p>
 </footer>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
