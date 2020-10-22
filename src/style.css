@@ -88,7 +88,9 @@ button {
   border: 0;
   border-radius: 0 5px 5px 0;
 }
-
+#button {
+  padding: 6px 14px;
+}
 .btn {
   border-radius: 0 5px 5px 0;
 }
@@ -134,3 +136,18 @@ a {
   color: #fff;
   text-decoration: underline;
 }
+
+@media screen and (max-width: 576px) {
+  #city {
+    text-align: center;
+    font-size: 35px;
+  }
+
+  @media screen and (max-width: 400px) {
+  #location-button {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    background-color: #EC6E4C;
+    border-radius: 0 5px 5px 0;
+  }
