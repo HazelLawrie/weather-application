@@ -29,6 +29,11 @@ input {
   z-index: 1;
 }
 
+.fa-cloud-sun {
+  font-size: 60px;
+  margin: 10px;
+}
+
 h1 {
   color: #fff;
   position: fixed;

@@ -61,6 +61,7 @@ function showWind(response) {
 document.querySelector("#wind-value").innerHTML = `${Math.round(response.data.wind.speed)}`;
 console.log(response);
 }
+
 // Show Wind in MPH rather than default m/s 
 
 function retrieveImperial(position) {
