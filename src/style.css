@@ -239,8 +239,9 @@ footer {
   .humidity {
     margin: 10px 0;
   }
-  #title {
+  h1 {
     font-size: 30px;
+    padding: 0;
   }
 }
 
@@ -259,13 +260,23 @@ footer {
   .humidity {
     margin: 10px 30px;
   }
+  h1 {
+    font-size: 25px;
+  }
+  #icon1,
+  #icon2 {
+    width: 50px;
+  }
+  .card {
+    margin: 70px auto 0;
+  }
 }
 
 @media screen and (max-width: 300px) {
   h1 {
-    font-size: 25px;
+    font-size: 20px;
   }
   .card {
-    margin-top: 80px;
+    margin-top: 70px;
   }
 }
