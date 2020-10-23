@@ -400,3 +400,50 @@ function autoRetrieveLondonImperial() {
 
 autoRetrieveLondon();
 autoRetrieveLondonImperial();
+
+
+// Get city from Search Form
+
+function searchShowWeather(response) {
+  document.querySelector("#city").innerHTML = `${response.data.name}, ${formatCountry(response.data.sys.country)}`;
+  document.querySelector("#displayed-temp").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#temp-description").innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() + response.data.weather[0].description.slice(1);
+  document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
+  document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
+  document.querySelector("#main-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#icon1").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#icon2").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#main-icon").setAttribute("alt", response.data.weather[0].description);
+  document.querySelector("#icon1").setAttribute("alt", response.data.weather[0].description);
+  document.querySelector("#icon2").setAttribute("alt", response.data.weather[0].description);
+  console.log(response);
+}
+function searchShowWind(response) {
+  document.querySelector("#wind-value").innerHTML = Math.round(response.data.wind.speed);
+  console.log(response);
+}
+
+function search(city) {
+  let apiKey = "1dca542b443d294d157be34aefdc0627";
+  let units = `metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
+  axios.get(url).then(searchShowWeather);
+}
+
+function searchImperial(city) {
+  let apiKey = "1dca542b443d294d157be34aefdc0627";
+  let units = `imperial`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
+  axios.get(url).then(searchShowWind);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#input")
+  console.log(cityInputElement.value);
+  search(cityInputElement.value);
+  searchImperial(cityInputElement.value);
+}
+
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
