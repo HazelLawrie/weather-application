@@ -224,12 +224,28 @@ footer {
   }
 }
 
+@media screen and (max-width: 463px) {
+  .wind-speed,
+  .pressure,
+  .humidity {
+    margin: 10px 0;
+  }
+}
+
 @media screen and (max-width: 400px) {
   h1 {
     font-size: 30px;
   }
   .card {
     margin-top: 85px;
+  }
+}
+
+@media screen and (max-width: 373px) {
+  .wind-speed,
+  .pressure,
+  .humidity {
+    margin: 20px;
   }
 }
 
