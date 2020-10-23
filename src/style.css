@@ -190,6 +190,24 @@ img {
   box-shadow: 3px 3px #fff;
 }
 
+#three-hour-forecast {
+  text-align: center;
+  font-size: 40px;
+  background: #fff;
+  color: #050233;
+  margin: 0 auto;
+  max-width: 800px;
+  display: block;
+}
+
+#forecast {
+  padding: 20px;
+}
+
+.forecast-icon {
+  margin: 0;
+}
+
 .weekdays {
   background-color: white;
   color: #232558;

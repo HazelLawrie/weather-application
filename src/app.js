@@ -301,6 +301,21 @@ function currentDate() {
 
 currentDate();
 
+// Get Time for 3 hour forecast
+
+function formatHours(timestamp) {
+  let currentDate = new Date(timestamp);
+  let hours = currentDate.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = currentDate.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
 // Show Weather and City on Screen after fetching Geolocation
 
 function showWeather(response) {
@@ -329,6 +344,9 @@ function retrievePosition(position) {
   let units = `metric`;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
   axios.get(url).then(showWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function retreiveGeolocation(event) {
@@ -364,11 +382,34 @@ function autoRetrieveLondon() {
   let city = `London`;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(url).then(autoShowWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 autoRetrieveLondon();
 
-// Get city from Search Form
+// Display Forecast
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+  <div class="col-sm">
+            ${formatHours(forecast.dt * 1000)}
+            <br>
+            <img class="forecast-icon" src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+            <br />
+            ${forecast.weather[0].description.charAt(0).toUpperCase() + forecast.weather[0].description.slice(1)}
+            <br />
+            ${Math.round(forecast.main.temp)}°C
+    </div>`;
+  }
+}
 
 function searchShowWeather(response) {
   celciusTemperature = response.data.main.temp;
@@ -392,6 +433,9 @@ function search(city) {
   let units = `metric`;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(url).then(searchShowWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
