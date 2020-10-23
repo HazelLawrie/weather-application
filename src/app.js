@@ -309,6 +309,9 @@ function showWeather(response) {
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].main;
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
   document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
+  document.querySelector("#main-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#icon1").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#icon2").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   console.log(response);
   retrieveImperialData();
 }
@@ -361,6 +364,9 @@ function autoShowWeather(response) {
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].main;
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
   document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
+  document.querySelector("#main-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#icon1").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document.querySelector("#icon2").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   console.log(response);
 }
 
@@ -374,7 +380,7 @@ function autoShowWind(response) {
 function autoRetrieveLondon() {
   let apiKey = "1dca542b443d294d157be34aefdc0627";
   let units = `metric`;
-  let city = `London`;
+  let city = `Milwaukee`;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(url).then(autoShowWeather);
 }

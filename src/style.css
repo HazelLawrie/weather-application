@@ -50,7 +50,7 @@ h1 {
   text-align: center;
   background-color: #050233;
   width: 100%;
-  padding: 10px 0 15px 0;
+  padding: 5px 0 0 0;
   z-index: 300;
   box-shadow: 0 5px 5px rgba(68, 46, 46, 0.3);
 }
@@ -121,14 +121,23 @@ hr {
   background-color: #fff;
   border-radius: 7px;
 }
+
+#main-icon {
+  margin: 0;
+  width: 100px;
+}
 #main-temp {
   font-size: 60px;
   text-align: left;
   margin: 0;
   margin-bottom: 20px;
-  padding: 0 0 0 15px;
+  padding: 0;
 }
-
+#icon1,
+#icon2 {
+  margin: 0;
+  width: 70px;
+}
 .date-time {
   font-size: 30px;
   text-align: center;
@@ -230,6 +239,9 @@ footer {
   .humidity {
     margin: 10px 0;
   }
+  #title {
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -245,7 +257,7 @@ footer {
   .wind-speed,
   .pressure,
   .humidity {
-    margin: 20px;
+    margin: 10px 30px;
   }
 }
 
