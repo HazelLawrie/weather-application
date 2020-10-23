@@ -62,7 +62,7 @@ h1 {
 
 #city {
   font-size: 60px;
-  margin: 30px 0 30px 0;
+  margin: 30px 0 20px 0;
 }
 button {
   color: #fff;
@@ -111,21 +111,22 @@ button:hover {
 }
 #temp-description {
   padding: 0;
-  margin: 10px 0 10px 0;
-  font-size: 20px;
+  margin: 0 0 10px 0;
+  font-size: 16px;
   font-family: "Roboto", sans-serif;
 }
 
 hr {
   height: 1px;
   background-color: #fff;
+  border-radius: 7px;
 }
 #main-temp {
   font-size: 60px;
   text-align: left;
   margin: 0;
   margin-bottom: 20px;
-  padding: 0;
+  padding: 0 0 0 15px;
 }
 
 .date-time {
@@ -158,14 +159,25 @@ img {
   font-size: 14px;
   line-height: 24px;
 }
-
+#displayed-temp {
+  margin-right: 14px;
+}
 #change-to-F,
 #change-to-C {
-  font-size: 25px;
+  font-size: 20px;
+  padding: 0 8px;
   position: relative;
-  top: -28px;
+  top: -26px;
   text-decoration: none;
   color: #fff;
+  background-color: #ff2079;
+  transition-duration: 200ms;
+}
+
+#change-to-F:hover,
+#change-to-C:hover {
+  background-color: #ff67a4;
+  box-shadow: 3px 3px #fff;
 }
 
 .weekdays {
@@ -194,12 +206,15 @@ footer {
   #city {
     text-align: center;
     font-size: 40px;
-    margin-top: 50px;
+    margin-top: 30px;
   }
   #date,
   #temp-description,
   #main-temp {
     text-align: center;
+  }
+  #main-temp {
+    padding: 0;
   }
 }
 
