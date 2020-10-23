@@ -406,7 +406,7 @@ function displayForecast(response) {
             <br />
             ${forecast.weather[0].description.charAt(0).toUpperCase() + forecast.weather[0].description.slice(1)}
             <br />
-            ${Math.round(forecast.main.temp)}°C
+            ${Math.round(forecast.main.temp)}°C | ${Math.round(forecast.main.temp * 9 / 5) + 32}°F
     </div>`;
   }
 }
