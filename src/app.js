@@ -304,8 +304,9 @@ currentDate();
 // Show Weather and City on Screen after fetching Geolocation
 
 function showWeather(response) {
+  celciusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = `${response.data.name}, ${formatCountry(response.data.sys.country)}`;
-  document.querySelector("#displayed-temp").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#displayed-temp").innerHTML = Math.round(celciusTemperature);
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() + response.data.weather[0].description.slice(1);
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
   document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
@@ -362,8 +363,9 @@ locationButton.addEventListener("click", retreiveGeolocation);
 // Default Real Weather Data for London Shown when Opening Page
 
 function autoShowWeather(response) {
+  celciusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = `${response.data.name}, ${formatCountry(response.data.sys.country)}`;
-  document.querySelector("#displayed-temp").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#displayed-temp").innerHTML = Math.round(celciusTemperature);
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() + response.data.weather[0].description.slice(1);
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
   document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
@@ -405,8 +407,9 @@ autoRetrieveLondonImperial();
 // Get city from Search Form
 
 function searchShowWeather(response) {
+  celciusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = `${response.data.name}, ${formatCountry(response.data.sys.country)}`;
-  document.querySelector("#displayed-temp").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#displayed-temp").innerHTML = Math.round(celciusTemperature);
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() + response.data.weather[0].description.slice(1);
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
   document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
@@ -447,3 +450,25 @@ function handleSubmit(event) {
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
+
+
+// Change C to F 
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault()
+  let fahrenheitTemp = Math.round(celciusTemperature * 9 / 5) + 32;
+  document.querySelector("#displayed-temp").innerHTML = fahrenheitTemp;
+}
+
+function displayCelciusTemp(event) {
+  event.preventDefault();
+  document.querySelector("#displayed-temp").innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#change-to-F");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celciusLink = document.querySelector("#change-to-C");
+celciusLink.addEventListener("click", displayCelciusTemp);
