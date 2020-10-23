@@ -112,7 +112,7 @@ button:hover {
 }
 #temp-description {
   padding: 0;
-  margin: 0 0 10px 0;
+  margin: 0;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
 }
@@ -234,7 +234,11 @@ footer {
 
 @media screen and (max-width: 579px) {
   .col-sm {
-    margin: 10px 30px 50px 30px;
+    margin: 10px 30px 35px 30px;
+  }
+  #three-hour-forecast {
+    font-size: 25px;
+    padding-top: 17px;
   }
 }
 
@@ -296,6 +300,24 @@ footer {
   }
   .card {
     margin: 70px auto 0;
+  }
+  #main-icon {
+    margin: 0 auto;
+    display: block;
+  }
+  #search-button-image,
+  #location-button-image {
+    width: 15px;
+    height: 15px;
+  }
+  #button,
+  #location-button {
+    padding: 6px;
+    margin-left: 1px;
+  }
+  #input {
+    padding: 0 0 0 10px;
+    font-size: 14px;
   }
 }
 
