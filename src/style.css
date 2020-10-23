@@ -4,8 +4,11 @@ html {
 
 body {
   font-family: "Oswald", sans-serif;
-  background-image: linear-gradient(to top, #4765c7 0%, #c4dcff 100%);
+  background-image: linear-gradient(to top, #330867 0%, #3090d0 100%);
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
   color: #fff;
 }
 
@@ -13,7 +16,7 @@ body {
   padding: 30px 30px 0 30px;
   margin: 140px auto;
   margin-bottom: 0;
-  background-color: #232558;
+  background-color: #050233;
   max-width: 800px;
   border-radius: 12px 12px 0 0;
 }
@@ -34,34 +37,67 @@ input {
   margin: 10px;
 }
 
+footer p a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 h1 {
   color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   text-align: center;
-  background-color: #232558;
+  background-color: #050233;
   width: 100%;
   padding: 10px 0 15px 0;
   z-index: 300;
   box-shadow: 0 5px 5px rgba(68, 46, 46, 0.3);
 }
 
+#title {
+  text-decoration: none;
+  color: #fff;
+}
+
 #city {
   font-size: 60px;
   margin: 30px 0 30px 0;
 }
+button {
+  color: #fff;
+  background-color: #440bd4;
+  border: 0;
+  border-radius: 0 5px 5px 0;
+}
+#button {
+  padding: 6px 14px;
+}
+.btn {
+  border-radius: 0 5px 5px 0;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #5d2bdb;
+  box-shadow: 3px 3px 0 0 rgba(249, 249, 255, 0.9);
+}
 
 #location-button-image,
 #search-button-image {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   margin: 0 0 2px 0;
 }
 
 #location-button {
-  border-radius: 5px;
+  border-radius: 0;
   margin-left: 13px;
+  background-color: #ff2079;
+}
+#location-button:hover {
+  background-color: #ff67a4;
+  box-shadow: 3px 3px 0 0 rgba(249, 249, 255, 0.9);
 }
 
 #date,
@@ -80,10 +116,15 @@ h1 {
   font-family: "Roboto", sans-serif;
 }
 
+hr {
+  height: 1px;
+  background-color: #fff;
+}
 #main-temp {
   font-size: 60px;
   text-align: left;
   margin: 0;
+  margin-bottom: 20px;
   padding: 0;
 }
 
@@ -118,29 +159,13 @@ img {
   line-height: 24px;
 }
 
-button {
-  color: #fff;
-  background-color: #4d50bf;
-  border: 0;
-  border-radius: 0 5px 5px 0;
-}
-#button {
-  padding: 6px 14px;
-}
-.btn {
-  border-radius: 0 5px 5px 0;
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: #6468e2;
-}
-
 #change-to-F,
 #change-to-C {
   font-size: 25px;
   position: relative;
   top: -28px;
+  text-decoration: none;
+  color: #fff;
 }
 
 .weekdays {
@@ -163,11 +188,6 @@ footer {
 
 .col-sm {
   margin-bottom: 30px;
-}
-
-a {
-  color: #fff;
-  text-decoration: underline;
 }
 
 @media screen and (max-width: 576px) {
