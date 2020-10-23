@@ -310,6 +310,7 @@ function showWeather(response) {
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() + response.data.weather[0].description.slice(1);
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
   document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind-value").innerHTML = `${Math.round(response.data.wind.speed * 2.237)}`;
   document.querySelector("#main-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon1").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon2").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -317,23 +318,6 @@ function showWeather(response) {
   document.querySelector("#icon1").setAttribute("alt", response.data.weather[0].description);
   document.querySelector("#icon2").setAttribute("alt", response.data.weather[0].description);
   console.log(response);
-  retrieveImperialData();
-}
-
-function showWind(response) {
-document.querySelector("#wind-value").innerHTML = `${Math.round(response.data.wind.speed)}`;
-console.log(response);
-}
-
-// Show Wind in MPH rather than default m/s 
-
-function retrieveImperial(position) {
-  let apiKey = "1dca542b443d294d157be34aefdc0627";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let units = `imperial`;
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
-  axios.get(url).then(showWind);
 }
 
 // Geolocation when clicking location button
@@ -352,11 +336,6 @@ function retreiveGeolocation(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
-function retrieveImperialData() {
-  navigator.geolocation.getCurrentPosition(retrieveImperial);
-  currentDate();
-}
-
 let locationButton = document.querySelector("#location-button");
 locationButton.addEventListener("click", retreiveGeolocation);
 
@@ -368,7 +347,8 @@ function autoShowWeather(response) {
   document.querySelector("#displayed-temp").innerHTML = Math.round(celciusTemperature);
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() + response.data.weather[0].description.slice(1);
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
-  document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
+  document.querySelector("#humidity-value").innerHTML = response.data.main.humidity; 
+  document.querySelector("#wind-value").innerHTML = Math.round(response.data.wind.speed * 2.237);
   document.querySelector("#main-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon1").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon2").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -378,31 +358,15 @@ function autoShowWeather(response) {
   console.log(response);
 }
 
-// Show Wind in MPH rather than default m/s
-
-function autoShowWind(response) {
-  document.querySelector("#wind-value").innerHTML = Math.round(response.data.wind.speed);
-  console.log(response);
-}
-
 function autoRetrieveLondon() {
   let apiKey = "1dca542b443d294d157be34aefdc0627";
   let units = `metric`;
-  let city = `Milwaukee`;
+  let city = `London`;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(url).then(autoShowWeather);
 }
 
-function autoRetrieveLondonImperial() {
-  let apiKey = "1dca542b443d294d157be34aefdc0627";
-  let units = `imperial`;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=London&units=${units}&appid=${apiKey}`;
-  axios.get(url).then(autoShowWind);
-}
-
 autoRetrieveLondon();
-autoRetrieveLondonImperial();
-
 
 // Get city from Search Form
 
@@ -413,16 +377,13 @@ function searchShowWeather(response) {
   document.querySelector("#temp-description").innerHTML = response.data.weather[0].description.charAt(0).toUpperCase() + response.data.weather[0].description.slice(1);
   document.querySelector("#pressure-value").innerHTML = response.data.main.pressure;
   document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind-value").innerHTML = Math.round(response.data.wind.speed * 2.237);
   document.querySelector("#main-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon1").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#icon2").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#main-icon").setAttribute("alt", response.data.weather[0].description);
   document.querySelector("#icon1").setAttribute("alt", response.data.weather[0].description);
   document.querySelector("#icon2").setAttribute("alt", response.data.weather[0].description);
-  console.log(response);
-}
-function searchShowWind(response) {
-  document.querySelector("#wind-value").innerHTML = Math.round(response.data.wind.speed);
   console.log(response);
 }
 
@@ -433,24 +394,15 @@ function search(city) {
   axios.get(url).then(searchShowWeather);
 }
 
-function searchImperial(city) {
-  let apiKey = "1dca542b443d294d157be34aefdc0627";
-  let units = `imperial`;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-  axios.get(url).then(searchShowWind);
-}
-
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#input")
   console.log(cityInputElement.value);
   search(cityInputElement.value);
-  searchImperial(cityInputElement.value);
 }
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
-
 
 // Change C to F 
 

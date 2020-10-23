@@ -108,6 +108,7 @@ button:hover {
 }
 #date {
   font-size: 30px;
+  line-height: 34px;
 }
 #temp-description {
   padding: 0;
