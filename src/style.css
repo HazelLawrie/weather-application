@@ -256,6 +256,9 @@ footer {
 }
 
 @media screen and (max-width: 576px) {
+  .card {
+    margin-top: 74px;
+  }
   #city {
     text-align: center;
     font-size: 40px;
@@ -277,7 +280,7 @@ footer {
 
 @media screen and (max-width: 475px) {
   .card {
-    margin: 100px auto 0;
+    margin: 70px auto 0;
   }
 }
 
@@ -298,7 +301,7 @@ footer {
     font-size: 30px;
   }
   .card {
-    margin-top: 85px;
+    margin-top: 70px;
   }
 }
 
@@ -316,7 +319,7 @@ footer {
     width: 50px;
   }
   .card {
-    margin: 70px auto 0;
+    margin: 45px auto 0;
   }
   #main-icon {
     margin: 0 auto;
@@ -343,6 +346,19 @@ footer {
     font-size: 20px;
   }
   .card {
-    margin-top: 70px;
+    margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: 254px) {
+  h1 {
+    font-size: 17px;
+  }
+  #icon1,
+  #icon2 {
+    width: 40px;
+  }
+  .card {
+    margin-top: 25px;
   }
 }
