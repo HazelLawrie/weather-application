@@ -191,7 +191,8 @@ img {
   box-shadow: 3px 3px #fff;
 }
 
-#three-hour-forecast {
+#three-hour-forecast,
+#five-day-forecast {
   text-align: center;
   font-size: 28px;
   background: #373442;
