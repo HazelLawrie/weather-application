@@ -346,11 +346,7 @@ function showWeather(response) {
   document.querySelector("#humidity-value").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-value").innerHTML = `${Math.round(response.data.wind.speed * 2.237)}`;
   document.querySelector("#main-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  document.querySelector("#icon1").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  document.querySelector("#icon2").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#main-icon").setAttribute("alt", response.data.weather[0].description);
-  document.querySelector("#icon1").setAttribute("alt", response.data.weather[0].description);
-  document.querySelector("#icon2").setAttribute("alt", response.data.weather[0].description);
   currentDate();
   console.log(response.data);
 }

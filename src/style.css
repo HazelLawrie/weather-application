@@ -173,24 +173,36 @@ img {
 #change-to-F,
 #change-to-C {
   font-size: 20px;
-  padding: 0 7.5px;
+  padding: 2px 8px;
   position: relative;
   top: -26px;
   text-decoration: none;
   color: #fff;
   background-color: #be9af7;
   transition-duration: 200ms;
-  border-radius: 50%;
+  border-radius: 30px;
 }
 
 #change-to-C {
-  padding: 0 6.5px;
+  padding: 2px 5px;
 }
 
 #change-to-F:hover,
 #change-to-C:hover {
   background-color: #9b6ece;
   box-shadow: 1px 1px 12px 0 rgb(94, 78, 88);
+}
+
+#lower-hr hr {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: rgb(226, 226, 226);
+}
+
+#lower-hr {
+  background-color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #three-hour-forecast,
@@ -227,8 +239,8 @@ img {
 
 footer {
   text-align: center;
-  margin: 35px auto;
-
+  margin: 32px auto 26px auto;
+  max-width: 800px;
   font-size: 12px;
   max-width: 800px;
 }
@@ -239,6 +251,27 @@ footer {
 
 .first-weekdays {
   border-radius: 0;
+}
+
+.github-logo {
+  width: 30px;
+  margin: 0;
+}
+
+.linkedin-logo {
+  width: 30px;
+  padding-right: 2px;
+  margin: 0;
+}
+
+.instagram-logo {
+  width: 40px;
+  margin: 0;
+}
+
+.behance-logo {
+  width: 30px;
+  padding: 0 0 0 3px;
 }
 
 @media screen and (max-width: 579px) {
