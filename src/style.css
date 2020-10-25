@@ -196,7 +196,10 @@ img {
 #lower-hr hr {
   max-width: 400px;
   margin: 0 auto;
-  background-color: rgb(226, 226, 226);
+  background-color: rgb(207, 207, 207);
+  border-radius: 7px;
+  border-top: 0;
+  height: 2px;
 }
 
 #lower-hr {
