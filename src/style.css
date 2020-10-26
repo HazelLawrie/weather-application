@@ -78,7 +78,7 @@ button {
 button:hover {
   cursor: pointer;
   background-color: #9b6ece;
-  box-shadow: 1px 1px 12px 0 rgb(94, 78, 88);
+  box-shadow: 1px 1px 12px 0 rgb(94, 78, 88, 0.3);
 }
 
 #location-button-image,
@@ -96,7 +96,7 @@ button:hover {
 }
 #location-button:hover {
   background-color: #9b6ece;
-  box-shadow: 1px 1px 12px 0 rgb(94, 78, 88);
+  box-shadow: 1px 1px 12px 0 rgb(94, 78, 88, 0.3);
 }
 
 #date,
@@ -190,7 +190,7 @@ img {
 #change-to-F:hover,
 #change-to-C:hover {
   background-color: #9b6ece;
-  box-shadow: 1px 1px 12px 0 rgb(94, 78, 88);
+  box-shadow: 1px 1px 12px 0 rgb(94, 78, 88, 0.3);
 }
 
 #lower-hr hr {

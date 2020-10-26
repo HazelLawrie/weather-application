@@ -348,7 +348,6 @@ function showWeather(response) {
   document.querySelector("#main-icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   document.querySelector("#main-icon").setAttribute("alt", response.data.weather[0].description);
   currentDate();
-  console.log(response.data);
 }
 
 // Geolocation when clicking location button
@@ -413,7 +412,6 @@ function displayForecast(response) {
             ${Math.round(forecast.main.temp)}°C | ${Math.round(forecast.main.temp * 9 / 5) + 32}°F
     </div>`;
   }
-  console.log(response.data);
 }
 
 // Display 5 day forecast
@@ -437,7 +435,6 @@ function displayForecastDays(response) {
             ${Math.round(forecast.main.temp)}°C | ${Math.round(forecast.main.temp * 9 / 5) + 32}°F
     </div>`;
   }
-  console.log(response.data);
 }
 
 function search(city) {
