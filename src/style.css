@@ -283,7 +283,7 @@ footer {
   }
   #three-hour-forecast {
     font-size: 25px;
-    padding-top: 17px;
+    padding-top: 24px;
   }
   .card {
     margin: 0;
@@ -323,9 +323,12 @@ footer {
     font-size: 30px;
     padding: 0;
   }
+  #lower-hr hr {
+    max-width: 300px;
+  }
 }
 
-@media screen and (max-width: 373px) {
+@media screen and (max-width: 350px) {
   .wind-speed,
   .pressure,
   .humidity {
@@ -349,5 +352,8 @@ footer {
   #input {
     padding: 0 0 0 10px;
     font-size: 14px;
+  }
+  #lower-hr hr {
+    max-width: 250px;
   }
 }
