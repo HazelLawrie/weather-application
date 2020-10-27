@@ -1,97 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Application</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="src/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-        <script src="https://kit.fontawesome.com/fa873fab92.js" crossorigin="anonymous"></script>
-        
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/fa873fab92.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="container">
-    <div class="card">
-    <div class="card-body">
-    <form id="form-all">
-        <div class="input-group">
-            <input id="input" type="text" class="form-control" placeholder="Enter City...">
-            <span class="input-group-btn">
-                <button id="button" class="btn btn-default" type="submit"><img id="search-button-image"src="images/search-symbol.png"></button>
-                <button id="location-button" class="btn btn-default" type="button"><img id="location-button-image" src="images/location-symbol.png" "></button>
-            </span>
+      <div class="card">
+        <div class="card-body">
+          <form id="form-all">
+            <div class="input-group">
+              <input
+                id="input"
+                type="text"
+                class="form-control"
+                placeholder="Enter City..."
+                autocomplete="off"
+              />
+              <span class="input-group-btn">
+                <button id="button" class="btn btn-default" type="submit">
+                  <img
+                    id="search-button-image"
+                    src="images/search-symbol.png"
+                  />
+                </button>
+                <button
+                  id="location-button"
+                  class="btn btn-default"
+                  type="button"
+                >
+                  <img id="location-button-image"
+                  src="images/location-symbol.png" ">
+                </button>
+              </span>
+            </div>
+          </form>
+          <div class="row">
+            <h2 id="city" class="card-title col-sm location"></h2>
+          </div>
+          <div class="row">
+            <h2 id="date" class="card-text col-sm date-time"></h2>
+          </div>
+          <h2 id="temp-description" class="card-text col-sm"></h2>
+          <div class="row">
+            <h2 id="main-temp" class="card-text col-sm temp">
+              <img id="main-icon" src="#" alt="" />
+              <span id="displayed-temp">-</span
+              ><a href="#" class="col" id="change-to-C">°C</a>
+              <a href="#" id="change-to-F">°F</a>
+            </h2>
+          </div>
+          <hr />
+          <div class="row second-row">
+            <h5 class="col pressure">
+              Pressure:
+              <br />
+              <span id="pressure-value">-</span>
+            </h5>
+            <h5 class="col humidity">
+              Humidity:
+              <br />
+              <span id="humidity-value">-</span>%
+            </h5>
+
+            <h5 class="col wind-speed">
+              Wind:
+              <br />
+              <span id="wind-value">-</span> mph
+            </h5>
+          </div>
         </div>
-    </form>
-    <div class="row">
-        <h2 id="city" class="card-title col-sm location">
-            
-        </h2>
-    </div>
-    <div class="row">
-        <h2 id="date" class="card-text col-sm date-time">
-            
-        </h2>
-    </div>
-    <h2 id="temp-description" class="card-text col-sm">
-            
-        </h2>  
-    <div class="row">
-        <h2 id="main-temp" class="card-text col-sm temp">
-            <img id="main-icon" src="#" alt="">
-            <span id="displayed-temp">-</span><a href="#" class="col" id="change-to-C">°C</a> <a href="#" id="change-to-F">°F</a>
-        </h2>
-        
-    </div> 
-    <hr>
-    <div class="row second-row">
-        
-        <h5 class="col pressure">
-            Pressure:
-            <br>
-            <span id="pressure-value">-</span>
-        </h5>
-        <h5 class="col humidity">
-            Humidity:
-            <br>
-            <span id="humidity-value">-</span>%
-        </h5>
-        
-        <h5 class="col wind-speed">
-            Wind:
-            <br>
-            <span id="wind-value">-</span> mph
-        </h5>
-    </div>
-    </div>
-    </div>
-    <p id="three-hour-forecast">3 Hour Forecast</p>
+      </div>
+      <p id="three-hour-forecast">3 Hour Forecast</p>
 
-    <div id="forecast" class="row weekdays first-weekdays">
+      <div id="forecast" class="row weekdays first-weekdays"></div>
+
+      <div id="lower-hr"><hr /></div>
+
+      <p id="five-day-forecast">5 Day Forecast</p>
+
+      <div id="forecast-days" class="row weekdays"></div>
+
+      <footer>
+        <p>
+          <a
+            href="https://github.com/HazelLawrie/weather-application"
+            target="_blank"
+            >Open source-code</a
+          >
+          by
+          <a href="https://www.linkedin.com/in/hazel-lawrie/" target="_blank"
+            >Hazel Lawrie</a
+          >
+          and
+          <a
+            href="https://boring-ardinghelli-f09f8b.netlify.app/"
+            target="_blank"
+            >hosted on Netlify</a
+          >
+        </p>
+        <a href="https://github.com/HazelLawrie/" target="_blank"
+          ><img
+            class="github-logo"
+            src="images/PngItem_1280311.png"
+            alt="Github Logo"
+        /></a>
+        <a href="https://www.instagram.com/hazel.codes/" target="_blank"
+          ><img
+            class="instagram-logo"
+            src="images/PngItem_20020.png"
+            alt="Instagram Logo"
+        /></a>
+        <a href="https://www.linkedin.com/in/hazel-lawrie/" target="_blank"
+          ><img
+            class="linkedin-logo"
+            src="images/linkedinlogo.png"
+            alt="Linkedin Logo"
+        /></a>
+        <a href="https://www.behance.net/hazel-lawrie" target="_blank"
+          ><img
+            class="behance-logo"
+            src="images/behancelogo.png"
+            alt="Behance Logo"
+        /></a>
+      </footer>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="src/app.js"></script>
     </div>
-    
-    <div id="lower-hr"><hr></div>
-
-    <p id="five-day-forecast">5 Day Forecast</p>
-
-    <div id="forecast-days" class="row weekdays">
-    </div>
-
-<footer>
-    <p>
-    <a href="https://github.com/HazelLawrie/weather-application" target="_blank">Open source-code</a> by <a href="https://www.linkedin.com/in/hazel-lawrie/" target="_blank">Hazel Lawrie</a> and <a href="https://boring-ardinghelli-f09f8b.netlify.app/" target="_blank">hosted on Netlify</a>
-    </p>
-    <a href="https://github.com/HazelLawrie/" target="_blank"><img class="github-logo" src="images/PngItem_1280311.png" alt="Github Logo"></a>
-    <a href="https://www.instagram.com/hazel.codes/" target="_blank"><img class="instagram-logo" src="images/PngItem_20020.png" alt="Instagram Logo"></a>
-    <a href="https://www.linkedin.com/in/hazel-lawrie/" target="_blank"><img class="linkedin-logo" src="images/linkedinlogo.png" alt="Linkedin Logo"></a>
-    <a href="https://www.behance.net/hazel-lawrie" target="_blank"><img class="behance-logo" src="images/behancelogo.png" alt="Behance Logo"></a>
-</footer>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="src/app.js"></script>
-
-</div>
-</body>
+  </body>
 </html>
