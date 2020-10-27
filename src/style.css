@@ -32,15 +32,13 @@ body {
   border-radius: 20px 0 0 20px;
 }
 
-.fa-cloud-sun {
-  font-size: 60px;
-  margin: 10px;
-  border-radius: 20px 0 0 20px;
-}
-
 footer p a {
   color: #fff;
   text-decoration: underline;
+}
+
+footer p a:hover {
+  color: #182456;
 }
 
 h1 {
